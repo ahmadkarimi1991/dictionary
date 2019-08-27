@@ -945,7 +945,7 @@ $(document).ready(function() {
         var found = -1;
 
         for (var i = 0; i < dictionary.length; i++) {
-            if (query == dictionary[i].word) {
+            if (query == dictionary[i].word.trim().toLowerCase()) {
                 found = i;
                 break;
             }
@@ -962,10 +962,16 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
+    $('.search-value').on('keyup', function(e) {
+        if ($(this).val() == "") {
+            $('#def').val('');
+        }
+    });
+
     $( ".search-value" ).autocomplete({
         source: function(request, response) {
             var results = $.ui.autocomplete.filter(availableTags, request.term);
             response(results.slice(0, 10));
         }
-      });
+    });
 });
