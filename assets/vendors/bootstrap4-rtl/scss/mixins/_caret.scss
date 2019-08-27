@@ -1,0 +1,14 @@
+
+  @mixin caret($direction: down) {
+    @if $enable-caret {
+      &::after {
+        margin-right: $caret-width * .85;
+        margin-left: auto;
+      }
+      &:empty::after {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }
+  }
+
