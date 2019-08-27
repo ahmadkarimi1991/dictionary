@@ -7,11 +7,12 @@
 
     <link rel="stylesheet" href="assets/vendors/bootstrap-4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap4-rtl/css/bootstrap4-rtl.min.css">
+    <link rel="stylesheet" href="assets/vendors/jquery-ui.css">
     <link rel="stylesheet" href="assets/css/app.css">
 
     <title>فرهنگ اصطلاحات فلسفه اخلاق</title>
 </head>
-<body class="rtl">
+<body class="d-flex flex-column rtl">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             <img src="assets/images/logo-70.png" alt="خانه اخلاق پژوهان جوان" width="40">
@@ -28,19 +29,104 @@
         </div>
     </nav>
 
-    <main role="main">
+    <main class="flex-grow-1" role="main">
         <div class="jumbotron">
             <div class="container">
                 <h1 class="text-center text-white mb-0 text-shadow-sm">فرهنگ اصطلاحات فلسفه اخلاق</h1>
             </div>
         </div>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <form class="search-form">
+                        <div class="form-group">
+                            <input type="search" class="form-control form-control-lg search-value" id="formControlInput" placeholder="لغت مورد نظر را وارد کنید">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control form-control-lg" id="def" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer>Footer</footer>
+    <footer class="bg-dark text-light py-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <div class="text-center mb-3">
+                        <a href="#">
+                            <img src="assets/images/logo-70.png" alt="خانه اخلاق پژوهان جوان">
+                        </a>
+                    </div>
+                    <div class="font-weight-bold mb-1 text-center">آدرس</div>
+                    <div class="mb-3 text-center">قم، خیابان ساحلی،بین کوچه ۲۰ و ۲۲ پلاک ۲۲۱</div>
+                    <div class="font-weight-bold mb-1 text-center">تماس</div>
+                    <div class="text-center">
+                        <a class="text-decoration-none text-light" href="tel:+982532907251">+98-253-290-7251</a>
+                    </div>
+                    <div class="text-center">
+                        <a class="text-decoration-none text-light" href="mailto:info@ethicshouse.ir">info@ethicshouse.ir</a>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <h5 class="text-center border-bottom pb-3 mb-3">دسترسی سریع</h5>
+                    <div class="text-center mb-2">
+                        <a class="text-decoration-none text-light" href="#">رویدادها</a>
+                    </div>
+                    <div class="text-center mb-2">
+                        <a class="text-decoration-none text-light" href="#">برنامه‌های ما</a>
+                    </div>
+                    <div class="text-center mb-2">
+                        <a class="text-decoration-none text-light" href="#">مقالات</a>
+                    </div>
+                    <div class="text-center mb-2">
+                        <a class="text-decoration-none text-light" href="#">اساتید</a>
+                    </div>
+                    <div class="text-center mb-2">
+                        <a class="text-decoration-none text-light" href="#">کتابخانه</a>
+                    </div>
+                    <div class="text-center mb-2">
+                        <a class="text-decoration-none text-light" href="#">چندرسانه‌ای</a>
+                    </div>
+                    <div class="text-center mb-2">
+                        <a class="text-decoration-none text-light" href="#">حمایت مالی</a>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <h5 class="text-center border-bottom pb-3 mb-3">خانه اخلاق در شبکه‌های اجتماعی</h5>
+                    <div class="card text-white bg-dark mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">خبرنامه</h5>
+                            <form>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید">
+                                </div>
+                                <button type="submit" class="btn btn-block btn-outline-light">عضویت در خبرنامه</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <h5 class="text-center border-bottom pb-3 mb-3">آدرس</h5>
+                    <div class="text-center">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3904.2058151244905!2d50.85438838022636!3d34.62861457739942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93bca837843d93%3A0x227feef76a549416!2z2K7Yp9mG2Ycg2KfYrtmE2KfZgiDZvtqY2YjZh9in2YYg2KzZiNin2YY!5e0!3m2!1sen!2s!4v1563430640310!5m2!1sen!2s" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="assets/vendors/jquery-3.4.1.min.js"></script>
     <script src="assets/vendors/popper.min.js"></script>
     <script src="assets/vendors/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/jquery-ui.js"></script>
+    <script src="assets/js/data.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html>
