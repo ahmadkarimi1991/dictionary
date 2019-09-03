@@ -932,33 +932,37 @@ var availableTags = [
     "Wrong-making quality",
 ];
 
+function search(word)
+{
+    word = word.trim();
+    word = word.toLowerCase();
+
+    if (word == '') {
+        return;
+    }
+
+    var found = -1;
+
+    for (var i = 0; i < dictionary.length; i++) {
+        if (word == dictionary[i].word.trim().toLowerCase()) {
+            found = i;
+            break;
+        }
+    }
+
+    $('#def').val("");
+
+    if (found >= 0) {
+        $('#def').val(dictionary[found].def);
+    } else {
+        $('#def').val("Not found");
+    }
+}
+
 $(document).ready(function() {
     $('.search-form').on('submit', function(event) {
         var query = $('.search-value').val();
-        query = query.trim();
-        query = query.toLowerCase();
-
-        if (query == '') {
-            return;
-        }
-
-        var found = -1;
-
-        for (var i = 0; i < dictionary.length; i++) {
-            if (query == dictionary[i].word.trim().toLowerCase()) {
-                found = i;
-                break;
-            }
-        }
-
-        $('#def').val("");
-
-        if (found >= 0) {
-            $('#def').val(dictionary[found].def);
-        } else {
-            $('#def').val("Not found");
-        }
-
+        search(query);
         event.preventDefault();
     });
 
@@ -972,6 +976,12 @@ $(document).ready(function() {
         source: function(request, response) {
             var results = $.ui.autocomplete.filter(availableTags, request.term);
             response(results.slice(0, 10));
+        },
+        select: function (event, ui) {
+            value = ui.item.value;
+            $('.search-value').val(value);
+            $('.search-form').submit();
+            return false;
         }
     });
 });
